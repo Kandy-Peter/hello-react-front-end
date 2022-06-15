@@ -1,22 +1,21 @@
-import React, { useEffect } from "react"
-import PropTypes from "prop-types";
-import fetchGreetings from "../redux/greeting";
-import { useDispatch, useSelector } from "react-redux";
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import fetchGreetings from '../redux/greeting';
 
 const Greeting = () => {
-  const text = useSelector((state) => state.greeting);
+  const text = useSelector((state) => state.reducer);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchGreetings());
-  }, []);
+  }, [dispatch]);
 
   return (
-    <p>Greeting: {text}</p>
-    );
-  };
+    <p>
+      Greeting:
+      <strong>{text}</strong>
+    </p>
+  );
+};
 
-  Greeting.propTypes = {
-    greeting: PropTypes.string
-  };
-  export default Greeting;
+export default Greeting;

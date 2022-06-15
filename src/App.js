@@ -9,8 +9,8 @@ function App() {
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={'Hello World'} />
-          <Route path='/greetings' element={<Greeting />} />
+          <Route path="/" element="Hello World" />
+          <Route path="/greetings" element={<Greeting />} />
         </Routes>
       </BrowserRouter>
     </Provider>
